@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# 2-args.py
+
 if __name__ == "__main__":
     """Print the addition of all arguments."""
     import sys
