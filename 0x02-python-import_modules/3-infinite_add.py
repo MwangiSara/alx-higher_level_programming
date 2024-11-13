@@ -1,11 +1,8 @@
 #!/usr/bin/python3
-# 2-args.py
-
-if __name__ == "__main__":
-    """Print the addition of all arguments."""
+if __name__ == '__main__':
     import sys
-
-    total = 0
-    for i in range(len(sys.argv) - 1):
-        total += int(sys.argv[i + 1])
-    print("{}".format(total))
+    summation = 0
+    argument_list = sys.argv[1:]
+    for argument in argument_list:
+        summation += int(argument)
+    print("{}".format(summation))
