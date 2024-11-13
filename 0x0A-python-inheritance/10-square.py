@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-Rectangle = __import__('9-rectangle').Rectangle
+"""defines class MyList"""
 
 
-class Square(Rectangle):
-    def __init__(self, size):
-        super().__init__(size, size)
+class MyList(list):
+    """class that inherits from list
+    with public instance method to print sorted list"""
+
+    def print_sorted(self):
+        print(sorted(self))
