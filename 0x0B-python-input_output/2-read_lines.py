@@ -1,7 +1,13 @@
 #!/usr/bin/python3
-"""defines function to return dictionary description for JSON serialization"""
+"""defines function to read n lines of a text file"""
 
 
-def class_to_json(obj):
-    """returns dictionary description for JSON serialization"""
-    return obj.__dict__
+def read_lines(filename="", nb_lines=0):
+    """reads nb_lines of text file"""
+    if nb_lines <= 0:
+        with open(filename) as f:
+            print(f.read(), end="")
+    else:
+        with open(filename) as f:
+            for i in range(nb_lines):
+                print(f.readline(), end="")
