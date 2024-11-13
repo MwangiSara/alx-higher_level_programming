@@ -1,48 +1,48 @@
-The ``Print Sorted List`` module
-================================
+==============================
+doctest for 1-my_list.py
+==============================
 
-Using ``MyList``
-----------------
+>>> MyList = __import__('1-my_list').MyList
 
-This is an example text file in reStructuredText format.
-First import ``MyList`` from the ``1-my_list`` module:
+TEST CONDITIONS
+===============
 
-    >>> MyList = __import__("1-my_list").MyList
+testing list
+::
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
 
-Now use it:
+testing empty list
+::
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
 
-    >>> a = MyList()
-    >>> a
-    []
-
-    >>> a.append(1)
-    >>> a
-    [1]
-
-    >>> a.append(5)
-    >>> a.append(3)
-    >>> a
-    [1, 5, 3]
-
-    >>> a.print_sorted()
-    [1, 3, 5]
-
-    >>> a.append("b")
-    >>> a
-    [1, 5, 3, 'b']
-
-    >>> a.print_sorted()
-    Traceback (most recent call last):
-        ...
-    TypeError: unorderable types: str() < int()
-
-    >>> b = MyList()
-    >>> b.append(5)
-    >>> b.append(-2)
-    >>> b.append(0)
-    >>> b.append(3)
-    >>> b
-    [5, -2, 0, 3]
-
-    >>> b.print_sorted()
-    [-2, 0, 3, 5]
+testing list with negative ints
+::
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(4)
+>>> my_list.append(-2)
+>>> my_list.append(3)
+>>> my_list.append(-5)
+>>> print(my_list)
+[-1, 4, -2, 3, -5]
+>>> my_list.print_sorted()
+[-5, -2, -1, 3, 4]
+>>> print(my_list)
+[-1, 4, -2, 3, -5]
