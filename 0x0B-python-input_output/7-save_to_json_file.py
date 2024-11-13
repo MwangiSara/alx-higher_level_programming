@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-import json
+"""defines function to write JSON representatin of an object to file"""
 
 
 def save_to_json_file(my_obj, filename):
-    with open(filename, mode="w", encoding="utf-8") as fd:
-        fd.write(json.dumps(my_obj))
+    """write JSON representation of an object to a file"""
+    import json
+    with open(filename, 'w') as f:
+        f.write(json.dumps(my_obj, ensure_ascii=False))
